@@ -1,7 +1,7 @@
-# blackip
+# BLACK IP - Resenha|Cyber
 Black List para o CLI
 
-Tool Readaptada do https://github.com/adionditsak/blacklist-check-unix-linux-utility
+Tool Readaptada do Adionditsak | blacklist-check-unix-linux-utility - Criada em 2014
 
 ### Instalação
 

@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 ####################################################################
-# bl - BLACKLIST CHECK UNIX/LINUX UTILITY                          #
+# Original bl - BLACKLIST CHECK UNIX/LINUX UTILITY                 #
 # copyright: (c) 2014 Anders Aarvik                                #
-# author: Anders Aarvik (aarvik92@gmail.com) and contributors      #
-# license: MIT licensed. See LICENSE                               #
-# description: I was just a bit tired of web interfaces
-#
-# Readaptado por Cyb3rEvil007
+#                                                                  #
+# Readaptado por Cyb3rEvil007 (c) 2020                             #
+# e-mail: ginsec007@protonmail.com                                 #
 ####################################################################
 
 #### main ####

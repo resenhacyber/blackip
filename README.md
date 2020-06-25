@@ -5,15 +5,15 @@ Tool Readaptada do Adionditsak | blacklist-check-unix-linux-utility - Criada em 
 
 ### Instalação
 
-    git clone https://github.com/Cyb3rEvil007/blackip.git
-    CD blackip
-    chmod + x ./blackip
-    mv ./blackip /usr/bin
+    $git clone https://github.com/Cyb3rEvil007/blackip.git
+    $cd blackip
+    $chmod +x blackip
+    $mv blackip /usr/bin
 
 ### Uso
 
     # Use com domínios ou endereços IP
-    $ blackip dominio.com.br
+    $ blackip tor-exit.ubermen.net
     $ blackip 8.8.8.8 # IP
     
     # Canalize com outros utilitários UNIX, por exemplo. grep. Apenas na lista negra:

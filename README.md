@@ -5,17 +5,16 @@
 
 ### Instalação
 
-    git clone https://github.com/Cyb3rEvil007/blackip.git
-    CD blackip
-    chmod + x ./blackip
-    mv ./blackip /usr/bin
+    $git clone https://github.com/Cyb3rEvil007/blackip.git
+    $cd blackip
+    $chmod +x blackip
+    $mv blackip /usr/bin
 
 ### Uso
 
     # Use com domínios ou endereços IP
-    $ blackip dominio.com.br
-    $ blackip 158.69.35.227 
-    $ blackip 158.69.35.227
+      $ blackip tor-exit.ubermen.net
+      $ blackip 8.8.8.8 # IP
     
     Resenha|Cyber Analisando o IP: 158.69.35.227
     158.69.35.227 Nome: tor-exit.ubermen.net.

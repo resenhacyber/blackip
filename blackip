@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 ####################################################################
-# Original bl - BLACKLIST CHECK UNIX/LINUX UTILITY                 #
-# copyright: (c) 2014 Anders Aarvik                                #
+# BlackIP - Reputação CLI (Linux)                                  #
 #                                                                  #
-# Readaptado por Cyb3rEvil007 (c) 2020                             #
-# e-mail: ginsec007@protonmail.com                                 #
+#                                                                  #
+# Cybersec007  (c) 2020 ----------->>>>>>>>>>>>>>>>>               #
+#                                                                  #
 ####################################################################
 
 #### main ####
@@ -28,7 +28,7 @@ main() {
     reverseit $1 "IP desconhecido ou invalido."
   fi
 
-  loopthroughblacklists $1
+  looplistanegra $1
 }
 
 #### reverseit ####
@@ -44,16 +44,16 @@ reverseit() {
   fi
 }
 
-#### loopthroughblacklists ####
-loopthroughblacklists() {
+#### looplistanegra ####
+looplistanegra() {
 
   reverse_dns=$(dig +short -x $1)
 
-  echo $1 name ${reverse_dns:----}
+   echo $1 Nome: ${reverse_dns:----}
 
   for bl in ${blacklists} ; do
 
-      printf $(env tz=utc date "+%y-%m-%d_%h:%m:%s_%z")
+####  printf $(env tz=utc date "+%y-%m-%d_%h:%m:%s_%z")
       printf "%-40s" " ${reverse}.${bl}."
 
       listed="$(dig +short -t a ${reverse}.${bl}.)"
@@ -62,7 +62,7 @@ loopthroughblacklists() {
 
         if [[ $listed == *"timed out"* ]]; then
 
-          echo "[timed out]" | cecho YELLOW 
+          echo "[Tempo Expirado]" | cecho YELLOW 
         else
         
           echo "[Lista Negra] (${listed})" | cecho LRED
@@ -96,124 +96,103 @@ cecho(){
   echo -ne "${NORMAL}"
 }
 
-#### blacklists - grabbed from https://hetrixtools.com/blacklist-check ####
+#### Blacklists####
 blacklists="
-0spam.fusionzero.com
-access.redhawk.org
-all.s5h.net
-all.spamrats.com
-aspews.ext.sorbs.net
-babl.rbl.webiron.net
-backscatter.spameatingmonkey.net
-b.barracudacentral.org
-bb.barracudacentral.org
-black.junkemailfilter.com
-bl.blocklist.de
-bl.drmx.org
-bl.konstant.no
-bl.mailspike.net
-bl.nosolicitado.org
-bl.nszones.com
-block.dnsbl.sorbs.net
-bl.rbl.scrolloutf1.com
-bl.scientificspam.net
-bl.score.senderscore.com
-bl.spamcop.net
-bl.spameatingmonkey.net
-bl.suomispam.net
-bsb.empty.us
-cart00ney.surriel.com
-cbl.abuseat.org
-cbl.anti-spam.org.cn
-cblless.anti-spam.org.cn
-cblplus.anti-spam.org.cn
-cdl.anti-spam.org.cn
-combined.rbl.msrbl.net
-db.wpbl.info
-dnsbl-1.uceprotect.net
-dnsbl-2.uceprotect.net
-dnsbl-3.uceprotect.net
-dnsbl.cobion.com
-dnsbl.dronebl.org
-dnsbl.justspam.org
-dnsbl.kempt.net
-dnsbl.net.ua
-dnsbl.rv-soft.info
-dnsbl.rymsho.ru
-dnsbl.sorbs.net
-dnsbl.spfbl.net
-dnsbl.tornevall.org
-dnsbl.zapbl.net
-dnsrbl.org
-dnsrbl.swinog.ch
-dul.dnsbl.sorbs.net
-dyna.spamrats.com
-dyn.nszones.com
-escalations.dnsbl.sorbs.net
-fnrbl.fast.net
-hostkarma.junkemailfilter.com
-http.dnsbl.sorbs.net
-images.rbl.msrbl.net
-invaluement
-ips.backscatterer.org
-ix.dnsbl.manitu.net
-l1.bbfh.ext.sorbs.net
-l2.bbfh.ext.sorbs.net
+z.mailspike.net 
+rbl.interserver.net 
+invaluement SIP 
+hostkarma.junkemailfilter.com 
+exploit.mail.abusix.zone 
+cbl.abuseat.org 
+black.junkemailfilter.com 
+all.s5h.net 
+0spam.fusionzero.com 
+aspews.ext.sorbs.net 
+backscatter.spameatingmonkey.net 
+bl.blocklist.de 
+bl.konstant.no 
+bl.nosolicitado.org 
+bl.scientificspam.net 
+bl.spamcop.net 
+bl.suomispam.net 
+block.dnsbl.sorbs.net 
+dnsbl-1.uceprotect.net 
+dnsbl-3.uceprotect.net 
+dnsbl.dronebl.org 
+dnsbl.kempt.net 
+dnsbl.sorbs.net 
+dnsbl.tornevall.org 
+dnsrbl.swinog.ch 
+dyna.spamrats.com 
+NordSpam 
+ix.dnsbl.manitu.net 	
+mail-abuse.blacklist.jippg.org 
+multi.surbl.org 
+new.spam.dnsbl.sorbs.net 
+old.spam.dnsbl.sorbs.net 
+problems.dnsbl.sorbs.net 
+psbl.surriel.com 
+rbl.blockedservers.com 
+rbl2.triumf.ca 
+relays.dnsbl.sorbs.net 	
+safe.dnsbl.sorbs.net 
+smtp.dnsbl.sorbs.net 	
+spam.dnsbl.anonmails.de 
+spam.pedantic.org 
+spam.spamrats.com 
+spamrbl.imp.ch 	
+st.technovision.dk 
+talosintelligence.com 
+truncate.gbudb.net 	
+web.dnsbl.sorbs.net 	
+zombie.dnsbl.sorbs.net 
+zen.spamhaus.org 
+xbl.spamhaus.org 
+torexit.dan.me.uk 
+dnsbl.justspam.org 
+black.mail.abusix.zone 
+bl.mailspike.net 
+access.redhawk.org 
+all.spamrats.com 
+b.barracudacentral.org 
+bb.barracudacentral.org 
+bl.drmx.org 
+bl.rbl.scrolloutf1.com 
+bl.score.senderscore.com 
+bl.spameatingmonkey.net 
+bl.worst.nosolicitado.org 
+cart00ney.surriel.com 
+db.wpbl.info 	
+dnsbl-2.uceprotect.net 
+dnsbl.cobion.com 
+dnsbl.net.ua 
+dnsbl.spfbl.net 
+dnsbl.zapbl.net 	
+dul.dnsbl.sorbs.net 
+escalations.dnsbl.sorbs.net 
+fnrbl.fast.net 	
+http.dnsbl.sorbs.net 
+invaluement SIP/24 	
+ips.backscatterer.org 
 l4.bbfh.ext.sorbs.net
-list.bbfh.org
-mail-abuse.blacklist.jippg.org
-misc.dnsbl.sorbs.net
-multi.surbl.org
-netscan.rbl.blockedservers.com
-new.spam.dnsbl.sorbs.net
-noptr.spamrats.com
-old.spam.dnsbl.sorbs.net
-pbl.spamhaus.org
-phishing.rbl.msrbl.net
-pofon.foobar.hu
-problems.dnsbl.sorbs.net
-proxies.dnsbl.sorbs.net
-psbl.surriel.com
-rbl2.triumf.ca
-rbl.abuse.ro
-rbl.blockedservers.com
-rbl.dns-servicios.com
-rbl.efnet.org
-rbl.efnetrbl.org
-rbl.interserver.net
-rbl.megarbl.net
-rbl.realtimeblacklist.com
-recent.spam.dnsbl.sorbs.net
-relays.dnsbl.sorbs.net
-rep.mailspike.net
-safe.dnsbl.sorbs.net
-sbl.spamhaus.org
-smtp.dnsbl.sorbs.net
-socks.dnsbl.sorbs.net
-spam.dnsbl.anonmails.de
-spam.dnsbl.sorbs.net
-spamlist.or.kr
-spam.pedantic.org
-spam.rbl.blockedservers.com
-spamrbl.imp.ch
-spam.rbl.msrbl.net
-spamsources.fabel.dk
-spam.spamrats.com
-srn.surgate.net
-stabl.rbl.webiron.net
-st.technovision.dk
-talosintelligence.com
-torexit.dan.me.uk
-truncate.gbudb.net
-ubl.unsubscore.com
-virus.rbl.msrbl.net
-web.dnsbl.sorbs.net
-web.rbl.msrbl.net
-xbl.spamhaus.org
-zen.spamhaus.org
-z.mailspike.net
-zombie.dnsbl.sorbs.net
-"
+misc.dnsbl.sorbs.net 	
+netscan.rbl.blockedservers.com 
+noptr.spamrats.com 
+pbl.spamhaus.org 
+proxies.dnsbl.sorbs.net 
+rbl.abuse.ro 	
+rbl.dns-servicios.com 	
+rbl.realtimeblacklist.com 
+recent.spam.dnsbl.sorbs.net 	
+rep.mailspike.net 
+sbl.spamhaus.org 
+socks.dnsbl.sorbs.net 
+spam.dnsbl.sorbs.net 
+spam.rbl.blockedservers.com 	
+spamlist.or.kr 
+spamsources.fabel.dk 
+mail-abuse.com 
+ubl.unsubscore.com "
 
 ### initiate script ###
-main $1
+main $1 

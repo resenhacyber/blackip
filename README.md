@@ -8,7 +8,7 @@ Tool Readaptada do Adionditsak | blacklist-check-unix-linux-utility - Criada em 
     git clone https://github.com/Cyb3rEvil007/blackip.git
     CD blackip
     chmod + x ./blackip
-    mv ./blackip / usr / bin
+    mv ./blackip /usr/bin
 
 ### Uso
 
@@ -25,7 +25,7 @@ Resenha|Cyber Analisando o IP: 158.69.35.227
 20-06-24_jun:06:1593023046_-0300 227.35.69.158.access.redhawk.org.      [OK]                                                                                                                                                               
 20-06-24_jun:06:1593023046_-0300 227.35.69.158.all.s5h.net.             [Lista Negra] (127.0.0.2)                                                                                                                                          
 20-06-24_jun:06:1593023047_-0300 227.35.69.158.all.spamrats.com.        [OK]                                                                                                                                                               
-20-06-24_jun:06:1593023047_-0300 227.35.69.158.aspews.ext.sorbs.net.    [OK]                                                                                                                                                                                                                                                                                                                  
+20-06-24_jun:06:1593023047_-0300 227.35.69.158.aspews.ext.sorbs.net.    [OK]                                                                                                                             
 20-06-24_jun:06:1593023062_-0300 227.35.69.158.backscatter.spameatingmonkey.net.[OK]                                                                                                                                                       
 20-06-24_jun:06:1593023062_-0300 227.35.69.158.b.barracudacentral.org.  [OK]                                                                                                                                                               
 20-06-24_jun:06:1593023062_-0300 227.35.69.158.bb.barracudacentral.org. [OK]                                                                                                                                                               

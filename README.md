@@ -54,4 +54,4 @@
 
 
 ### Lembrete
-    Cuidado nos seus testes, use sempre um proxy, VPN.
+    Cuidado nos seus testes, use sempre um proxy ou VPN.

@@ -5,7 +5,7 @@
 
 ### Instalação
 
-    $git clone https://github.com/Cyb3rEvil007/blackip.git
+    $git clone https://github.com/resenhacyber/blackip.git
     $cd blackip
     $chmod +x blackip
     $mv blackip /usr/bin
